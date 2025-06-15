@@ -1,27 +1,25 @@
 import React from 'react';
 import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
-import HomePage from './pages/HomePage';
-import ActivitesPage from './pages/ActivitesPage';
-import CreerActivitePage from './pages/CreerActivitePage';
-import ComptePage from './pages/ComptePage';
+import Accueil from './pages/Accueil';
+import Activites from './pages/Activites';
+import Creer from './pages/Creer';
+import MonCompte from './pages/MonCompte';
 import Navbar from './components/Navbar';
-
 
 function App() {
   return (
     <Router>
-      <div className="App">
+      <Navbar />
+      <main style={{ padding: '20px' }}>
         <Routes>
-          <Route path="/" element={<HomePage />} />
-          <Route path="/activites" element={<ActivitesPage />} />
-          <Route path="/creer" element={<CreerActivitePage />} />
-          <Route path="/compte" element={<ComptePage />} />
+          <Route path="/" element={<Accueil />} />
+          <Route path="/activites" element={<Activites />} />
+          <Route path="/creer" element={<Creer />} />
+          <Route path="/mon-compte" element={<MonCompte />} />
         </Routes>
-        <Navbar />
-      </div>
+      </main>
     </Router>
   );
 }
-
 
 export default App;
